@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛事作品 | 椰奶味 Visuals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        
+:root {
+    --apple-bg: #000000;
+    --apple-card-bg: #111112;
+    --apple-card-hover: #1c1c1e;
+    --apple-text-main: #f5f5f7;
+    --apple-text-sub: #86868b;
+    --apple-blue: #2997ff;
+    --apple-gold: #d4af37;
+    --apple-nav-bg: rgba(0, 0, 0, 0.85);
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--apple-bg);
+    color: var(--apple-text-main);
+    line-height: 1.5;
+    letter-spacing: -0.015em;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Navigation */
+.apple-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--apple-nav-bg);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    z-index: 1000;
+    height: 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.apple-logo {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--apple-text-main);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-md);
+}
+
+.nav-links a {
+    color: var(--apple-text-main);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    opacity: 1;
+    color: var(--apple-blue);
+}
+
+/* Hero Section */
+.apple-hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: radial-gradient(circle at center, #1c1c1e 0%, #000000 100%);
+    padding-top: 48px;
+    text-align: center;
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.hero-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--apple-blue);
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-sm);
+    background: linear-gradient(180deg, #ffffff 0%, #86868b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: var(--apple-text-sub);
+    max-width: 650px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* Main Grid & Cards */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: var(--apple-text-sub);
+}
+
+/* Gallery Showcase List */
+.showcase-section {
+    padding: var(--spacing-md) 0 var(--spacing-xl);
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.showcase-item {
+    background: var(--apple-card-bg);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s;
+}
+
+.showcase-item:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.showcase-img-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 66.66%; /* 3:2 aspect ratio */
+    overflow: hidden;
+    background: #0a0a0a;
+}
+
+.showcase-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.showcase-item:hover .showcase-img {
+    transform: scale(1.03);
+    opacity: 1;
+}
+
+.showcase-meta {
+    padding: var(--spacing-sm);
+}
+
+.showcase-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--apple-blue);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.showcase-tag.award {
+    color: var(--apple-gold);
+}
+
+.showcase-item-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.showcase-item-desc {
+    font-size: 13px;
+    color: var(--apple-text-sub);
+    line-height: 1.4;
+}
+
+/* Action Button */
+.back-to-home {
+    display: inline-block;
+    margin-top: var(--spacing-xl);
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--apple-text-main);
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.back-to-home:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(-2px);
+}
+
+/* Footer */
+.apple-footer {
+    padding: var(--spacing-lg) 0;
+    background: #000;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    color: var(--apple-text-sub);
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 38px; }
+    .showcase-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+}
+
+        .subpage-hero {
+            padding: 120px 0 60px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: linear-gradient(180deg, #050505 0%, #000000 100%);
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="apple-nav">
+        <div class="nav-content">
+            <a href="index.html" class="apple-logo"><i class="fas fa-camera-retro"></i> 椰奶味 Visuals</a>
+            <ul class="nav-links">
+                <li><a href="index.html">浏览全部</a></li>
+<li><a href="awards.html" class="active">赛事作品</a></li>
+<li><a href="macro.html">微距生态</a></li>
+<li><a href="architecture.html">空间建筑</a></li>
+<li><a href="wedding.html">婚礼纪实</a></li>
+<li><a href="events.html">现场活动</a></li>
+<li><a href="products.html">商业产品</a></li>
+<li><a href="food.html">精致静物</a></li>
+
+            </ul>
+        </div>
+    </nav>
+    
+
+    <section class="subpage-hero">
+        <div class="container">
+            <div class="hero-subtitle">International Contests</div>
+            <h1 class="hero-title">赛事作品</h1>
+            <p class="hero-description">挺进全球视觉舞台，以富有东方情绪底蕴的胶片风骨和当代光影重构打动评委。</p>
+        </div>
+    </section>
+
+    <section class="showcase-section">
+        <div class="container">
+            <div class="showcase-grid">
+                
+                <div class="showcase-item">
+                    <div class="showcase-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=600&q=80" class="showcase-img" alt="浮生西关">
+                    </div>
+                    <div class="showcase-meta">
+                        <div class="showcase-tag award"><i class="fas fa-trophy"></i> PhotoVogue 2026 入选</div>
+                        <h3 class="showcase-item-title">浮生西关</h3>
+                        <p class="showcase-item-desc">利用极强暗调侧光刻画骑楼下的老人，光影切割充满港片叙事张力。</p>
+                    </div>
+                </div>
+        
+                <div class="showcase-item">
+                    <div class="showcase-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=600&q=80" class="showcase-img" alt="大剧院的孤影">
+                    </div>
+                    <div class="showcase-meta">
+                        <div class="showcase-tag award"><i class="fas fa-trophy"></i> IPA 国际摄影奖 入围</div>
+                        <h3 class="showcase-item-title">大剧院的孤影</h3>
+                        <p class="showcase-item-desc">舞台边缘一抹戏剧性的顶光打在舞者身上，极致空旷感与几何线条交织。</p>
+                    </div>
+                </div>
+        
+                <div class="showcase-item">
+                    <div class="showcase-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=600&q=80" class="showcase-img" alt="搏击火花">
+                    </div>
+                    <div class="showcase-meta">
+                        <div class="showcase-tag">赛事精选</div>
+                        <h3 class="showcase-item-title">搏击火花</h3>
+                        <p class="showcase-item-desc">微距生态中拍摄双鱼缠斗的瞬间，斩获当年自然生态类银奖提名。</p>
+                    </div>
+                </div>
+        
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="index.html" class="back-to-home"><i class="fas fa-arrow-left"></i> 返回主页目录</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="apple-footer">
+        <div class="container">
+            <p>© 2026 椰奶味 Visuals. 以极致镜头语言重塑日常之美。保留所有权利。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
