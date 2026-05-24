@@ -3,376 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>椰奶味 Visuals | 电影感艺术摄影作品集</title>
+    <title>WUKITPHOTO | 电影感艺术摄影作品集</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        
-:root {
-    --apple-bg: #000000;
-    --apple-card-bg: #111112;
-    --apple-card-hover: #1c1c1e;
-    --apple-text-main: #f5f5f7;
-    --apple-text-sub: #86868b;
-    --apple-blue: #2997ff;
-    --apple-gold: #d4af37;
-    --apple-nav-bg: rgba(0, 0, 0, 0.85);
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 2rem;
-    --spacing-lg: 4rem;
-    --spacing-xl: 6rem;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-    background-color: var(--apple-bg);
-    color: var(--apple-text-main);
-    line-height: 1.5;
-    letter-spacing: -0.015em;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-}
-
-.container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
-}
-
-/* Navigation */
-.apple-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: var(--apple-nav-bg);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    z-index: 1000;
-    height: 48px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.nav-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-sm);
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.apple-logo {
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--apple-text-main);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: var(--spacing-md);
-}
-
-.nav-links a {
-    color: var(--apple-text-main);
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 400;
-    opacity: 0.8;
-    transition: opacity 0.2s ease, color 0.2s ease;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    opacity: 1;
-    color: var(--apple-blue);
-}
-
-/* Hero Section */
-.apple-hero {
-    min-height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    background: radial-gradient(circle at center, #1c1c1e 0%, #000000 100%);
-    padding-top: 48px;
-    text-align: center;
-}
-
-.hero-content {
-    z-index: 2;
-}
-
-.hero-subtitle {
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--apple-blue);
-    margin-bottom: var(--spacing-sm);
-}
-
-.hero-title {
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: var(--spacing-sm);
-    background: linear-gradient(180deg, #ffffff 0%, #86868b 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero-description {
-    font-size: 18px;
-    color: var(--apple-text-sub);
-    max-width: 650px;
-    margin: 0 auto;
-    font-weight: 400;
-}
-
-/* Main Grid & Cards */
-.section-header {
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-    margin-top: var(--spacing-xl);
-}
-
-.section-title {
-    font-size: 36px;
-    font-weight: 600;
-    margin-bottom: var(--spacing-xs);
-}
-
-.section-subtitle {
-    font-size: 16px;
-    color: var(--apple-text-sub);
-}
-
-/* Gallery Showcase List */
-.showcase-section {
-    padding: var(--spacing-md) 0 var(--spacing-xl);
-}
-
-.showcase-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    gap: var(--spacing-md);
-}
-
-.showcase-item {
-    background: var(--apple-card-bg);
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s;
-}
-
-.showcase-item:hover {
-    transform: translateY(-6px);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.showcase-img-wrapper {
-    position: relative;
-    width: 100%;
-    padding-top: 66.66%; /* 3:2 aspect ratio */
-    overflow: hidden;
-    background: #0a0a0a;
-}
-
-.showcase-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.85;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.showcase-item:hover .showcase-img {
-    transform: scale(1.03);
-    opacity: 1;
-}
-
-.showcase-meta {
-    padding: var(--spacing-sm);
-}
-
-.showcase-tag {
-    font-size: 11px;
-    text-transform: uppercase;
-    color: var(--apple-blue);
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-}
-
-.showcase-tag.award {
-    color: var(--apple-gold);
-}
-
-.showcase-item-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 6px;
-}
-
-.showcase-item-desc {
-    font-size: 13px;
-    color: var(--apple-text-sub);
-    line-height: 1.4;
-}
-
-/* Action Button */
-.back-to-home {
-    display: inline-block;
-    margin-top: var(--spacing-xl);
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.08);
-    color: var(--apple-text-main);
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 14px;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.back-to-home:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateX(-2px);
-}
-
-/* Footer */
-.apple-footer {
-    padding: var(--spacing-lg) 0;
-    background: #000;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    text-align: center;
-    color: var(--apple-text-sub);
-    font-size: 12px;
-}
-
-@media (max-width: 768px) {
-    .hero-title { font-size: 38px; }
-    .showcase-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-}
-
-        /* Index Category Cards Layout */
-        .categories-section {
-            padding: var(--spacing-lg) 0;
-        }
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--spacing-sm);
-        }
-        .category-card {
-            position: relative;
-            height: 240px;
-            border-radius: 18px;
-            overflow: hidden;
-            background: var(--apple-card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            text-decoration: none;
-            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s;
-        }
-        .category-card.large {
-            grid-column: span 2;
-        }
-        .category-card:hover {
-            transform: scale(1.02);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-        .category-bg {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.45;
-            transition: transform 0.4s, opacity 0.4s;
-        }
-        .category-card:hover .category-bg {
-            opacity: 0.65;
-            transform: scale(1.04);
-        }
-        .category-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: var(--spacing-sm);
-            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 100%);
-        }
-        .category-name {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--apple-text-main);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .category-name i {
-            font-size: 13px;
-            color: var(--apple-text-sub);
-            transition: transform 0.3s;
-        }
-        .category-card:hover .category-name i {
-            transform: translateX(4px);
-            color: var(--apple-blue);
-        }
-        .category-desc {
-            font-size: 12px;
-            color: var(--apple-text-sub);
-            margin-top: 4px;
-        }
-        @media (max-width: 992px) {
-            .categories-grid { grid-template-columns: repeat(2, 1fr); }
-            .category-card.large { grid-column: span 1; }
-        }
-        @media (max-width: 576px) {
-            .categories-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
     <nav class="apple-nav">
         <div class="nav-content">
-            <a href="index.html" class="apple-logo"><i class="fas fa-camera-retro"></i> 椰奶味 Visuals</a>
+            <a href="index.html" class="nav-logo"><i class="fas fa-camera-retro"></i> WUKITPHOTO | 电影感艺术摄影作品集</a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">浏览全部</a></li>
-<li><a href="awards.html">赛事作品</a></li>
-<li><a href="macro.html">微距生态</a></li>
-<li><a href="architecture.html">空间建筑</a></li>
-<li><a href="wedding.html">婚礼纪实</a></li>
-<li><a href="events.html">现场活动</a></li>
-<li><a href="products.html">商业产品</a></li>
-<li><a href="food.html">精致静物</a></li>
+<li><a href="pages/awards.html">赛事作品</a></li>
+<li><a href="pages/macro.html">微距生态</a></li>
+<li><a href="pages/architecture.html">空间建筑</a></li>
+<li><a href="pages/wedding.html">婚礼纪实</a></li>
+<li><a href="pages/events.html">现场活动</a></li>
+<li><a href="pages/products.html">商业产品</a></li>
+<li><a href="pages/food.html">精致静物</a></li>
 
             </ul>
         </div>
     </nav>
     
-
+    
     <section class="apple-hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-subtitle">Cinematic Photography</div>
+                <div class="hero-subtitle">Cinematic Portfolio</div>
                 <h1 class="hero-title">以高级电影感美学<br>重塑日常之美</h1>
-                <p class="hero-description">在这里，每一幅作品都是一幕定格的电影。运用克制的45度强对比布光与极简视觉框架，将岭南风韵与微观世界化为永恒诗篇。</p>
+                <p class="hero-desc">融合克制的45度强对比布光与极简视觉画幅，将富有岭南本土情绪的情感叙事与深邃的微观世界定格化为永恒诗篇。</p>
             </div>
         </div>
     </section>
@@ -381,56 +41,56 @@ body {
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">作品分类画廊</h2>
-                <p class="section-subtitle">打破题材界限，用统一的镜头调性解构大千世界</p>
+                <p class="section-subtitle">探索不同题材维度下的视觉解构与镜头表达</p>
             </div>
             <div class="categories-grid">
-                <a href="awards.html" class="category-card large">
-                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80" class="category-bg" alt="赛事">
+                <a href="pages/awards.html" class="category-card large">
+                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80" class="category-bg" alt="国际赛事">
                     <div class="category-info">
                         <div class="category-name">赛事作品 <i class="fas fa-arrow-right"></i></div>
-                        <div class="category-desc">PhotoVogue、IPA 等国际顶级摄影大赛入围与角逐精选</div>
+                        <div class="category-desc">PhotoVogue、IPA 国际摄影奖等顶级平台入围与角逐精选</div>
                     </div>
                 </a>
-                <a href="macro.html" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=500&q=80" class="category-bg" alt="微距">
+                <a href="pages/macro.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=500&q=80" class="category-bg" alt="微距生态">
                     <div class="category-info">
                         <div class="category-name">微距生态 <i class="fas fa-arrow-right"></i></div>
-                        <div class="category-desc">搏鱼游弋瞬间与不可直视的微观赛博光泽</div>
+                        <div class="category-desc">格斗鱼游弋瞬间与暗调下不可直视的微观赛博光泽</div>
                     </div>
                 </a>
-                <a href="architecture.html" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80" class="category-bg" alt="建筑">
+                <a href="pages/architecture.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80" class="category-bg" alt="空间建筑">
                     <div class="category-info">
                         <div class="category-name">空间建筑 <i class="fas fa-arrow-right"></i></div>
-                        <div class="category-desc">大剧院流畅线条与西关旧式骑楼的几何美感</div>
+                        <div class="category-desc">西关旧式骑楼的传统弧度与现代剧院流畅的多边几何线条</div>
                     </div>
                 </a>
-                <a href="wedding.html" class="category-card large">
-                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" class="category-bg" alt="婚礼">
+                <a href="pages/wedding.html" class="category-card large">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" class="category-bg" alt="婚礼纪实">
                     <div class="category-info">
                         <div class="category-name">婚礼纪实 <i class="fas fa-arrow-right"></i></div>
-                        <div class="category-desc">拒绝流水线，捕捉强烈情感碰撞与不着痕迹的自然纪实</div>
+                        <div class="category-desc">捕捉饱含戏剧张力的不着痕迹自然流露，拒绝复刻与流水线精修</div>
                     </div>
                 </a>
-                <a href="events.html" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=500&q=80" class="category-bg" alt="活动">
+                <a href="pages/events.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=500&q=80" class="category-bg" alt="现场活动">
                     <div class="category-info">
                         <div class="category-name">现场活动 <i class="fas fa-arrow-right"></i></div>
-                        <div class="category-desc">舞台戏剧低调高光、广州歌剧院的优雅芭蕾定格</div>
+                        <div class="category-desc">大剧院舞台光影下的优雅芭蕾定格与舞台剧低调高光</div>
                     </div>
                 </a>
-                <a href="products.html" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" class="category-bg" alt="产品">
+                <a href="pages/products.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" class="category-bg" alt="商业产品">
                     <div class="category-info">
                         <div class="category-name">商业产品 <i class="fas fa-arrow-right"></i></div>
-                        <div class="category-desc">硬朗工业感静物布光，展现材质本身的极致细腻</div>
+                        <div class="category-desc">极简硬朗工业静物布光，无限放大材质与机械构造的极致细腻</div>
                     </div>
                 </a>
-                <a href="food.html" class="category-card">
-                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80" class="category-bg" alt="美食">
+                <a href="pages/food.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80" class="category-bg" alt="精致静物">
                     <div class="category-info">
                         <div class="category-name">精致静物 <i class="fas fa-arrow-right"></i></div>
-                        <div class="category-desc">广式早茶一盅两件的晨曦烟火与现代色彩交融</div>
+                        <div class="category-desc">广式早茶晨曦雾气交融下的烟火气与现代色彩重构</div>
                     </div>
                 </a>
             </div>
@@ -440,38 +100,38 @@ body {
     <section class="showcase-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">全题材精选总展示</h2>
-                <p class="section-subtitle">Masterpieces Overview</p>
+                <h2 class="section-title">全题材精选作品总览</h2>
+                <p class="section-subtitle">Masterpieces Highlight</p>
             </div>
             <div class="showcase-grid">
                 <div class="showcase-item">
                     <div class="showcase-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=600&q=80" class="showcase-img" alt="作品">
+                        <img src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=600&q=80" class="showcase-img" alt="精选作品 1">
                     </div>
                     <div class="showcase-meta">
-                        <div class="showcase-tag award"><i class="fas fa-trophy"></i> PhotoVogue 入选</div>
-                        <h3 class="showcase-item-title">红墙切线</h3>
-                        <p class="showcase-item-desc">光影在传统粤式老砖墙中切出的戏剧性斜光，绝佳的45度高对比度构图。</p>
+                        <div class="showcase-tag award"><i class="fas fa-trophy"></i> PhotoVogue 2026 入选</div>
+                        <h3 class="showcase-item-title">红墙斜切线条</h3>
+                        <p class="showcase-item-desc">斜射晨光在传统旧砖墙上切出分明的明暗边界，呈现出强烈的电影叙事宿命感。</p>
                     </div>
                 </div>
                 <div class="showcase-item">
                     <div class="showcase-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=600&q=80" class="showcase-img" alt="作品">
+                        <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=600&q=80" class="showcase-img" alt="精选作品 2">
                     </div>
                     <div class="showcase-meta">
                         <div class="showcase-tag">微距生态</div>
-                        <h3 class="showcase-item-title">霓虹羽翼</h3>
-                        <p class="showcase-item-desc">极浅景深捕捉搏鱼摆尾瞬间，鳍条在暗调布光下泛出冷冽的金属蓝。</p>
+                        <h3 class="showcase-item-title">深海霓虹：搏鱼侧影</h3>
+                        <p class="showcase-item-desc">采用浅景深精准捕获格斗鱼鳞片的深邃金属光泽，四周黑场突出冷冽美感。</p>
                     </div>
                 </div>
                 <div class="showcase-item">
                     <div class="showcase-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" class="showcase-img" alt="作品">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" class="showcase-img" alt="精选作品 3">
                     </div>
                     <div class="showcase-meta">
                         <div class="showcase-tag">婚礼纪实</div>
-                        <h3 class="showcase-item-title">情绪骤雨</h3>
-                        <p class="showcase-item-desc">新人执手相看泪眼的一瞬间，宽幅港风电影色调滤镜渲染深刻氛围。</p>
+                        <h3 class="showcase-item-title">宽幅叙事：执手瞬间</h3>
+                        <p class="showcase-item-desc">仿30mm经典宽画幅电影滤镜，定格仪式中无声流泪的动人高光时刻。</p>
                     </div>
                 </div>
             </div>
@@ -481,7 +141,7 @@ body {
     
     <footer class="apple-footer">
         <div class="container">
-            <p>© 2026 椰奶味 Visuals. 以极致镜头语言重塑日常之美。保留所有权利。</p>
+            <p>© 2026 椰奶味 Visuals. Designed with minimalist aesthetics. 保留所有权利。</p>
         </div>
     </footer>
 
